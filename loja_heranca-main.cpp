@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <limits>
-#include "loja_heranca.h"
+#include "loja_heranca_incompleto.h"
 
 using namespace std;
 

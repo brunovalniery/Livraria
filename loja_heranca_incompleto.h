@@ -5,7 +5,7 @@
 #include <string>
 
 using namespace std;
-
+//Está completa, não é necessário alterar
 class Produto
 {
 private:
@@ -21,18 +21,35 @@ public:
   inline void imprimir() const {salvar(cout);}
 };
 
-inline istream& operator>>(istream &I, Produto &P) {P.digitar(); return I;}
+inline istream& operator>>(istream &I, Produto &P) {P.digitar(); return I;} //utiliza método público, por isso não é necessário a palavra reservada friend.
 inline ostream& operator<<(ostream &O, const Produto &P) {P.salvar(O); return O;}
 
 // =========================================
 // Inclua aqui as classes Livro, CD e DVD
 // =========================================
+class Livro{
+private:
+public:
 
-class ListaLivro
+};
+
+class CD{
+private:
+public:
+
+};
+
+class DVD{
+private:
+public:
+
+};
+
+class ListaLivro //classe que envolve alocação dinâmica de memória
 {
 private:
-  Livro *x;
-  unsigned N;
+  Livro *x; //array dinâmico de livros
+  unsigned N; //guardar a dimensão do array
 public:
   // Inclua os construtores, destrutor e operadores necessarios
   void incluir(const Livro &L);
@@ -46,6 +63,17 @@ public:
 // =========================================
 // Inclua aqui as classes ListaCD e ListaDVD
 // =========================================
+class ListaCD{
+private:
+public:
+
+};
+
+class ListaDVD{
+private:
+public:
+
+};
 
 class Loja
 {
