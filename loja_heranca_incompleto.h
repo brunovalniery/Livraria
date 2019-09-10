@@ -27,22 +27,34 @@ inline ostream& operator<<(ostream &O, const Produto &P) {P.salvar(O); return O;
 // =========================================
 // Inclua aqui as classes Livro, CD e DVD
 // =========================================
-class Livro{
+class Livro : public Produto{
 private:
+    string autor;
 public:
-
+    bool ler(istream &I){Produto::ler()};
+    void salvar(ostream &O) const Produto::salvar();
+    void digitar() Produto::digitar();
+    inline void imprimir() const {salvar(cout); Produto::imprimir()}
 };
 
-class CD{
+class CD : public Produto{
 private:
+    int numfaixas;
 public:
-
+    bool ler(istream &I) Produto::ler();
+    void salvar(ostream &O) const Produto::salvar();
+    void digitar() Produto::digitar();
+    inline void imprimir() const {salvar(cout); Produto::imprimir()}
 };
 
-class DVD{
+class DVD : public Produto{
 private:
+    int duracao;
 public:
-
+    bool ler(istream &I) Produto::ler();
+    void salvar(ostream &O) const Produto::salvar();
+    void digitar() Produto::digitar();
+    inline void imprimir() const {salvar(cout); Produto::imprimir()}
 };
 
 class ListaLivro //classe que envolve alocação dinâmica de memória
